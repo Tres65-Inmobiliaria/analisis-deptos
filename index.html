@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Comparativo de Inversión · TRES65 Inmobiliaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #1a5c5a;
+    --teal-mid: #1e7a6e;
+    --teal-bright: #2aaa99;
+    --teal-light: #e0f4f1;
+    --gold: #c9a84c;
+    --gold-light: #f7f0dc;
+    --white: #ffffff;
+    --off-white: #f7f9f8;
+    --dark: #1a2e2d;
+    --gray: #637270;
+    --gray-light: #eaf0ef;
+    --shadow: 0 2px 20px rgba(26,92,90,0.08);
+    --shadow-hover: 0 10px 36px rgba(26,92,90,0.16);
+    --radius: 12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--off-white);
+    color: var(--dark);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .header {
+    background: #fff;
+    border-bottom: 1px solid var(--gray-light);
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .header-logo img { height: 60px; width: auto; display: block; }
+  .header-meta { text-align: right; }
+  .header-meta h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--teal-deep);
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+  .header-meta .tagline {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+  }
+  .header-accent {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--teal-bright);
+    margin: 6px 0 0 auto;
+    border-radius: 2px;
+  }
+
+  .market-banner {
+    background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 100%);
+    padding: 28px 48px;
+  }
+  .market-banner-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: center;
+  }
+  .market-stat { text-align: center; }
+  .market-stat .val {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .market-stat .lbl {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .market-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); margin: 0 auto; }
+  @media(max-width:700px){ .market-banner-inner{ grid-template-columns:1fr 1fr; } .market-divider{display:none;} }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  .section-head { padding: 44px 0 20px; }
+  .section-head h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--teal-deep);
+    letter-spacing: -0.2px;
+  }
+  .section-head p { font-size: 0.82rem; color: var(--gray); margin-top: 5px; font-weight: 400; }
+
+  /* PENDING / WARNING BOX */
+  .warn-box {
+    background: #fdf3e7;
+    border-left: 3px solid #d98c2b;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+  .warn-box .warn-lbl {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: #a5651a; margin-bottom: 6px;
+  }
+  .warn-box p { font-size: 0.78rem; color: var(--dark); line-height: 1.6; }
+  .warn-box p + p { margin-top: 6px; }
+
+  .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; padding-bottom: 8px; }
+  @media(max-width:780px){ .cards-grid{ grid-template-columns:1fr; } }
+
+  .p-card {
+    background: #fff; border-radius: var(--radius); box-shadow: var(--shadow);
+    border: 1.5px solid transparent; overflow: hidden;
+    transition: transform .25s, box-shadow .25s, border-color .25s; position: relative;
+  }
+  .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--teal-bright); }
+
+  .p-badge {
+    position: absolute; top: 12px; right: 12px; font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; z-index: 2;
+  }
+  .badge-gold { background: var(--gold); color: #fff; }
+  .badge-value { background: var(--teal-light); color: var(--teal-deep); }
+
+  .p-card-head { padding: 22px 22px 14px; border-bottom: 1px solid var(--gray-light); }
+  .p-card-id { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; color: var(--teal-bright); text-transform: uppercase; margin-bottom: 6px; }
+  .p-card-name { font-family: 'Raleway', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .p-card-zone { font-size: 0.75rem; color: var(--gray); margin-top: 3px; }
+
+  .p-price-row {
+    padding: 14px 22px; background: linear-gradient(to right, var(--teal-light), #fff);
+    display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
+  }
+  .p-price-real { font-family: 'Raleway', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--teal-deep); line-height: 1; }
+  .p-price-cur { font-size: 0.7rem; font-weight: 600; color: var(--teal-mid); }
+  .p-price-m2 { font-size: 0.68rem; color: var(--gray); margin-left: auto; font-weight: 500; white-space: nowrap; }
+
+  .p-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-light); }
+  .p-stat { background: #fff; padding: 10px 14px; }
+  .p-stat-lbl { font-size: 0.6rem; font-weight: 700; color: var(--gray); letter-spacing: 0.8px; text-transform: uppercase; }
+  .p-stat-val { font-size: 0.88rem; font-weight: 600; color: var(--dark); margin-top: 1px; }
+
+  .p-desc { padding: 16px 22px 10px; font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
+
+  .p-tags { padding: 0 22px 16px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .p-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--teal-light); color: var(--teal-deep); }
+
+  .p-scores { padding: 14px 22px 18px; border-top: 1px solid var(--gray-light); }
+  .scores-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .score-name { font-size: 0.68rem; color: var(--dark); width: 110px; flex-shrink: 0; }
+  .score-bg { flex: 1; height: 5px; background: var(--gray-light); border-radius: 3px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--teal-mid), var(--teal-bright)); transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+  .score-num { font-size: 0.68rem; font-weight: 700; color: var(--teal-deep); width: 24px; text-align: right; }
+
+  .rent-box {
+    margin: 0 22px 18px; padding: 12px 14px; background: var(--gold-light);
+    border-left: 3px solid var(--gold); border-radius: 6px;
+  }
+  .rent-box .rent-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
+  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); }
+  .rent-box .rent-note { font-size: 0.68rem; color: var(--gray); margin-top: 2px; }
+
+  .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 8px; }
+  @media(max-width:680px){ .charts-row{grid-template-columns:1fr;} }
+  .chart-box { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+  .chart-box h4 { font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--teal-deep); margin-bottom: 20px; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 16px; height: 140px; padding-bottom: 2px; }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+  .bar { width: 100%; border-radius: 6px 6px 0 0; position: relative; animation: barUp .9s ease forwards; }
+  .bar-v { position: absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.62rem; font-weight:700; color:var(--teal-deep); white-space:nowrap; }
+  .bar-lbl { font-size:0.65rem; color:var(--gray); text-align:center; font-weight:500; line-height:1.3; }
+  @keyframes barUp { from{transform:scaleY(0);transform-origin:bottom} to{transform:scaleY(1);transform-origin:bottom} }
+
+  .table-scroll-hint {
+    display: none; align-items: center; justify-content: center; margin-bottom: 10px;
+    padding: 9px 16px; background: var(--teal-light); border-radius: 8px; border-left: 3px solid var(--teal-bright);
+  }
+  .table-scroll-hint span { font-size: 0.72rem; font-weight: 600; color: var(--teal-deep); letter-spacing: 0.5px; }
+  @media (max-width: 768px) { .table-scroll-hint { display: flex; } }
+  .table-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-scroll-container::-webkit-scrollbar { height: 4px; }
+  .table-scroll-container::-webkit-scrollbar-track { background: var(--gray-light); }
+  .table-scroll-container::-webkit-scrollbar-thumb { background: var(--teal-bright); border-radius: 2px; }
+  .sticky-col { position: sticky; left: 0; z-index: 2; background: #fff; white-space: nowrap; }
+  .compare-table thead th.sticky-col { background: var(--teal-deep); z-index: 3; }
+  .compare-table tbody tr:hover td.sticky-col { background: var(--off-white); }
+  @media (max-width: 768px) {
+    .compare-table th, .compare-table td { min-width: 150px; }
+    .sticky-col { min-width: 150px !important; }
+  }
+
+  .table-wrap { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 8px; }
+  .compare-table { width:100%; border-collapse:collapse; }
+  .compare-table thead tr { background: var(--teal-deep); }
+  .compare-table thead th {
+    padding: 14px 18px; text-align: left; color: #fff; font-family: 'Raleway', sans-serif;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.3px;
+  }
+  .compare-table thead th:first-child { color:rgba(255,255,255,0.55); font-size:0.65rem; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; }
+  .compare-table tbody tr { border-bottom:1px solid var(--gray-light); transition:background .15s; }
+  .compare-table tbody tr:hover { background:var(--off-white); }
+  .compare-table tbody tr:last-child { border-bottom:none; }
+  .compare-table tbody td { padding:11px 18px; font-size:0.8rem; color:var(--dark); }
+  .compare-table tbody td:first-child { font-weight:600; color:var(--gray); font-size:0.72rem; letter-spacing:0.3px; }
+  .hl { background:var(--gold-light)!important; font-weight:700!important; color:var(--teal-deep)!important; border-radius:4px; padding:3px 7px; }
+  .yes { color:var(--teal-bright); font-weight:700; }
+  .no  { color:#c97070; }
+  .pend { color:#d98c2b; font-weight:700; }
+
+  .tabs-nav {
+    display: flex; gap: 4px; background: var(--gray-light); padding: 4px; border-radius: 8px;
+    width: fit-content; margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 7px 18px; border: none; background: transparent; border-radius: 6px;
+    font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--gray);
+    cursor: pointer; transition: all .2s; letter-spacing: 0.2px;
+  }
+  .tab-btn.active { background:#fff; color:var(--teal-deep); box-shadow:0 1px 6px rgba(0,0,0,.08); }
+  .tab-pane { display:none; }
+  .tab-pane.active { display:block; }
+
+  .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:680px){ .analysis-grid{grid-template-columns:1fr;} }
+
+  .a-box { background:#fff; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
+  .a-box h4 {
+    font-family:'Raleway',sans-serif; font-size:0.88rem; font-weight:700; color:var(--teal-deep);
+    margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid var(--teal-light);
+  }
+  .a-box ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .a-box ul li { font-size:0.76rem; color:var(--gray); padding-left:16px; position:relative; line-height:1.5; }
+  .a-box ul li::before { content:'→'; position:absolute; left:0; color:var(--teal-bright); font-weight:700; }
+  .a-box ul li.pro::before { content:''; color:#2aaa99; }
+  .a-box ul li.con::before { content:''; color:#c97070; }
+  .a-box ul li strong { color:var(--dark); }
+
+  .verdicts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media(max-width:780px){ .verdicts-grid{grid-template-columns:1fr;} }
+
+  .v-card { background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); border-top:3px solid var(--teal-bright); }
+  .v-card.v-gold { border-top-color:var(--gold); }
+  .v-card.v-dark { border-top-color:var(--teal-deep); grid-column: 1 / -1; }
+  .v-icon { font-size:1.6rem; margin-bottom:10px; }
+  .v-prop { font-size:0.62rem; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:5px; }
+  .v-card.v-gold .v-prop { color:var(--gold); }
+  .v-title { font-family:'Raleway',sans-serif; font-size:0.95rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+  .v-text { font-size:0.76rem; color:var(--gray); line-height:1.6; }
+
+  .footer { background: var(--dark); margin-top: 44px; padding: 36px 48px 24px; }
+  .footer-inner {
+    max-width: 1080px; margin: 0 auto; display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 32px; flex-wrap: wrap;
+  }
+  .footer-brand img { height: 60px; width: auto; display: block; margin-bottom: 12px; opacity: 0.95; }
+  .footer-brand p { font-size: 0.74rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+  .footer-agent { text-align:right; }
+  .agent-name { font-family:'Raleway',sans-serif; font-size:1rem; font-weight:700; color:#fff; letter-spacing:-0.2px; }
+  .agent-role { font-size:0.68rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:10px; }
+  .agent-contact { font-size:0.74rem; color:rgba(255,255,255,.5); line-height:1.9; }
+  .agent-contact a { color:rgba(255,255,255,.5); text-decoration:none; }
+  .footer-hr { border:none; border-top:1px solid rgba(255,255,255,.08); margin:22px 0 14px; }
+  .footer-bottom {
+    max-width:1080px; margin:0 auto; font-size:0.66rem; color:rgba(255,255,255,.25);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px;
+  }
+
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+
+  #mobile-overlay {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: linear-gradient(160deg, #0d2420 0%, var(--teal-deep) 100%);
+    flex-direction: column; align-items: center; justify-content: center; padding: 36px 28px; text-align: center;
+  }
+  #mobile-overlay .mo-logo { margin-bottom: 28px; }
+  #mobile-overlay .mo-logo img { height: 60px; width: auto; opacity: 0.98; }
+  #mobile-overlay .mo-icon { font-size: 2.4rem; margin-bottom: 14px; }
+  #mobile-overlay .mo-tag {
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--teal-bright); margin-bottom: 14px; border: 1px solid rgba(42,170,153,0.4);
+    padding: 5px 14px; border-radius: 20px; display: inline-block;
+  }
+  #mobile-overlay h2 { font-family: 'Raleway', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 16px; }
+  #mobile-overlay .mo-divider { width: 40px; height: 2px; background: var(--teal-bright); border-radius: 2px; margin: 0 auto 20px; }
+  #mobile-overlay .mo-rules { list-style: none; max-width: 340px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 9px; }
+  #mobile-overlay .mo-rules li { font-size: 0.76rem; color: rgba(255,255,255,0.65); display: flex; align-items: flex-start; gap: 8px; text-align: left; line-height: 1.5; }
+  #mobile-overlay .mo-rules li::before { content: '—'; color: var(--teal-bright); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  #mobile-overlay .mo-confirm { font-size: 0.72rem; color: rgba(255,255,255,0.4); max-width: 300px; margin: 0 auto 28px; font-style: italic; line-height: 1.6; }
+  .mo-btn {
+    background: var(--teal-bright); color: #fff; border: none; padding: 14px 36px; border-radius: 50px;
+    font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px;
+    cursor: pointer; transition: background .2s, transform .15s; display: inline-block;
+  }
+  .mo-btn:hover { background: #23988a; transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<div id="mobile-overlay">
+  <div class="mo-logo">
+    <img src="logoblancotres.png" alt="TRES65 Inmobiliaria"
+         onerror="this.outerHTML='<span style=\'font-family:Raleway,sans-serif;font-size:1.6rem;font-weight:800;color:#2aaa99\'>TRES65</span>'">
+  </div>
+  <div class="mo-icon">⊘</div>
+  <div class="mo-tag">Documento Confidencial</div>
+  <h2>Reporte de Uso Interno</h2>
+  <div class="mo-divider"></div>
+  <ul class="mo-rules">
+    <li>Este reporte contiene información comercial estratégica preparada exclusivamente para el asesor y su cliente.</li>
+    <li>Queda estrictamente prohibido compartir, reenviar o publicar este documento sin autorización escrita.</li>
+    <li>No debe reproducirse ni utilizarse con fines distintos a la asesoría para la que fue elaborado.</li>
+    <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
+  </ul>
+  <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
+  <button class="mo-btn" onclick="closeMobileOverlay()">Acepto y accedo al reporte →</button>
+</div>
+
+<header class="header">
+  <div class="header-logo">
+    <img src="logo_para_uso_digital_rgb.jpg" alt="TRES65 Inmobiliaria"
+         onerror="this.outerHTML='<span style=\'font-family:Raleway,sans-serif;font-size:1.6rem;font-weight:800;color:#1a5c5a\'>TRES<span style=\'color:#2aaa99\'>65</span></span>'">
+  </div>
+  <div class="header-meta">
+    <h1>Análisis Comparativo de Inversión</h1>
+    <span class="header-accent"></span>
+    <p class="tagline">Departamentos zona norte · Julio 2026 · Uso Confidencial</p>
+  </div>
+</header>
+
+<div class="market-banner">
+  <div class="market-banner-inner">
+    <div class="market-stat">
+      <div class="val">$15K–$19.5K</div>
+      <div class="lbl">MXN/mes renta tradicional 2 rec.</div>
+    </div>
+    <div class="market-divider"></div>
+    <div class="market-stat">
+      <div class="val">43–55%</div>
+      <div class="lbl">Ocupación Airbnb zona norte</div>
+    </div>
+    <div class="market-divider"></div>
+    <div class="market-stat">
+      <div class="val">3.4–4.8%</div>
+      <div class="lbl">Cap rate neto estimado</div>
+    </div>
+    <div class="market-divider"></div>
+    <div class="market-stat">
+      <div class="val">Tradicional</div>
+      <div class="lbl">Perfil de renta recomendado</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section-head reveal">
+    <h2>Perfil del inversionista</h2>
+    <p>Marco Arellano · Inversionista con 2 propiedades activas en Mérida · Objetivo: adquirir un tercer activo para renta</p>
+  </div>
+
+  <div class="warn-box reveal">
+    <div class="warn-lbl">⚠ Datos pendientes de confirmar por escrito antes de cerrar</div>
+    <p><strong>Arvum:</strong> la ficha oficial (EB-FF0786) registra $3,450,000 MXN con 1 cajón de estacionamiento. El precio de trabajo de este análisis ($3,750,000 con 2 cajones) proviene de información verbal del cliente — se requiere ficha o cotización actualizada del desarrollador que respalde el premium de $300,000 MXN.</p>
+    <p><strong>MIRA:</strong> la ficha oficial (EB-TM7745) registra 1 estacionamiento. Se mencionó verbalmente que la unidad de interés cuenta con 2 cajones — se requiere confirmación del asesor/desarrollador antes de usar esta cifra en cualquier negociación.</p>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- ARVUM -->
+    <div class="p-card reveal">
+      <div class="p-badge badge-value">◈ Menor mantenimiento</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-FF0786 · Modelo C</div>
+        <div class="p-card-name">Arvum</div>
+        <div class="p-card-zone">Benito Juárez Nte / San Ramón Norte, Mérida</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$3,750,000</span>
+        <span class="p-price-cur">MXN <span class="pend">(pendiente confirmar)</span></span>
+        <span class="p-price-m2">$46.3K/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">81 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Estacionamiento</div><div class="p-stat-val">2 cajones <span class="pend">*</span></div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Mantenimiento</div><div class="p-stat-val">$3,500/mes</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Entrega</div><div class="p-stat-val">Confirmar con desarrollador</div></div>
+      </div>
+      <div class="p-desc">Complejo orientado por el propio desarrollador a <strong>"estudiantes y matrimonios jóvenes"</strong> — esto confirma perfil de renta tradicional de largo plazo, no vacacional. Domótica básica (luces y A/C vía smartphone). Amenidades compartidas (gym, alberca, salón de usos múltiples) elevan el atractivo de renta sin costo adicional de mantenimiento propio de la unidad.</div>
+      <div class="p-tags">
+        <span class="p-tag">◉ Alberca</span>
+        <span class="p-tag">◈ Gym</span>
+        <span class="p-tag">✦ Salón usos múltiples</span>
+        <span class="p-tag">◦ Domótica básica</span>
+        <span class="p-tag">◈ Estacionamiento techado</span>
+      </div>
+      <div class="rent-box">
+        <div class="rent-lbl">§ Renta tradicional estimada mensual</div>
+        <div class="rent-val">$15,000 – $18,000 MXN</div>
+        <div class="rent-note">Basado en comparables activos de la zona · perfil de inquilino: joven profesional / matrimonio joven</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Rendimiento financiero estimado</div>
+        <div class="score-row"><span class="score-name">Cap rate neto</span><div class="score-bg"><div class="score-fill" style="width:46%"></div></div><span class="score-num">4.6</span></div>
+        <div class="score-row"><span class="score-name">Costo operativo</span><div class="score-bg"><div class="score-fill" style="width:88%"></div></div><span class="score-num">8.8</span></div>
+        <div class="score-row"><span class="score-name">Certeza de datos</span><div class="score-bg"><div class="score-fill" style="width:55%"></div></div><span class="score-num">5.5</span></div>
+      </div>
+    </div>
+
+    <!-- MIRA -->
+    <div class="p-card reveal">
+      <div class="p-badge badge-gold">◆ Mejor entrada / más espacio</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-TM7745 · Depto. Dúplex 306, 3er nivel</div>
+        <div class="p-card-name">MIRA</div>
+        <div class="p-card-zone">Colonia México / México Norte, Mérida</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$3,300,000</span>
+        <span class="p-price-cur">MXN de lista</span>
+        <span class="p-price-m2">$26.4K/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">2 + medio baño</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">125 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Estacionamiento</div><div class="p-stat-val">1 en ficha <span class="pend">*</span></div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Mantenimiento</div><div class="p-stat-val">$5,721/mes ($45.77/m²)</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Entrega</div><div class="p-stat-val">Confirmar avance de obra</div></div>
+      </div>
+      <div class="p-desc">Proyecto de usos mixtos (lofts, oficinas y locales comerciales) con <strong>lobby con recepción, sala de juntas de uso común, seguridad 24h y 39 propietarios</strong> bajo administración de ENACSA. Abastecimiento por pozo, sin contrato JAPAY. Al recibir la unidad se cobran <strong>3 mensualidades de mantenimiento anticipadas (~$17,164 MXN)</strong> adicionales al cierre. Perfil de edificio orientado a inquilino profesional de contrato largo, no turístico.</div>
+      <div class="p-tags">
+        <span class="p-tag">◈ Coworking / sala de juntas</span>
+        <span class="p-tag">✦ Seguridad 24h</span>
+        <span class="p-tag">◦ Lobby con recepción</span>
+        <span class="p-tag">◉ Balcón y terraza</span>
+        <span class="p-tag">◈ Uso mixto (comercial + residencial)</span>
+      </div>
+      <div class="rent-box">
+        <div class="rent-lbl">§ Renta tradicional estimada mensual</div>
+        <div class="rent-val">$15,000 – $19,500 MXN</div>
+        <div class="rent-note">Mayor m² y ubicación comercial permiten techo más alto · perfil de inquilino: profesional / oficina en casa</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Rendimiento financiero estimado</div>
+        <div class="score-row"><span class="score-name">Cap rate neto</span><div class="score-bg"><div class="score-fill" style="width:48%"></div></div><span class="score-num">4.8</span></div>
+        <div class="score-row"><span class="score-name">Costo operativo</span><div class="score-bg"><div class="score-fill" style="width:58%"></div></div><span class="score-num">5.8</span></div>
+        <div class="score-row"><span class="score-name">Certeza de datos</span><div class="score-bg"><div class="score-fill" style="width:60%"></div></div><span class="score-num">6.0</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-head reveal">
+    <h2>Comparativa de números clave</h2>
+    <p>Precio de entrada · costo de mantenimiento anual · cap rate neto estimado</p>
+  </div>
+  <div class="charts-row reveal">
+    <div class="chart-box">
+      <h4>Costo de mantenimiento anual (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:61%;background:linear-gradient(to top,#1a5c5a,#2aaa99);position:relative;">
+            <span class="bar-v">$42,000</span>
+          </div>
+          <span class="bar-lbl">Arvum</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#c9a84c,#f0d080);position:relative;">
+            <span class="bar-v">$68,655</span>
+          </div>
+          <span class="bar-lbl">MIRA</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <h4>Cap rate neto estimado (rango %)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:88%;background:linear-gradient(to top,#1a5c5a,#2aaa99);position:relative;">
+            <span class="bar-v">3.7% – 4.6%</span>
+          </div>
+          <span class="bar-lbl">Arvum</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:92%;background:linear-gradient(to top,#c9a84c,#f0d080);position:relative;">
+            <span class="bar-v">3.4% – 4.8%</span>
+          </div>
+          <span class="bar-lbl">MIRA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head reveal">
+    <h2>Tabla comparativa completa</h2>
+    <p>Todos los factores decisivos sin filtros</p>
+  </div>
+
+  <div class="table-scroll-hint" id="tableHint">
+    <span>‹ desliza para ver ambas propiedades ›</span>
+  </div>
+
+  <div class="table-wrap reveal">
+    <div class="table-scroll-container">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th class="sticky-col">Criterio</th>
+          <th>Arvum</th>
+          <th>MIRA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="sticky-col">Precio</td><td><span class="pend">$3,750,000 MXN (pendiente confirmar)</span></td><td>$3,300,000 MXN</td></tr>
+        <tr><td class="sticky-col">Precio/m² construido</td><td>$46,300 MXN</td><td><span class="hl">$26,400 MXN</span></td></tr>
+        <tr><td class="sticky-col">Construcción</td><td>81 m²</td><td><span class="hl">125 m²</span></td></tr>
+        <tr><td class="sticky-col">Recámaras / baños</td><td>2 / 2</td><td>2 / 2 + medio</td></tr>
+        <tr><td class="sticky-col">Estacionamiento</td><td><span class="pend">2 cajones (verbal, no en ficha)</span></td><td><span class="pend">1 en ficha / 2 mencionado verbal</span></td></tr>
+        <tr><td class="sticky-col">Mantenimiento mensual</td><td><span class="hl">$3,500 MXN</span></td><td>$5,721 MXN</td></tr>
+        <tr><td class="sticky-col">Mantenimiento anual</td><td><span class="hl">$42,000 MXN</span></td><td>$68,655 MXN</td></tr>
+        <tr><td class="sticky-col">Cuota anticipada al recibir</td><td>No especificada</td><td><span class="no">~$17,164 MXN (3 meses)</span></td></tr>
+        <tr><td class="sticky-col">Renta tradicional estimada</td><td>$15,000–$18,000/mes</td><td>$15,000–$19,500/mes</td></tr>
+        <tr><td class="sticky-col">Cap rate neto estimado</td><td>3.7%–4.6%</td><td>3.4%–4.8%</td></tr>
+        <tr><td class="sticky-col">Perfil de inquilino esperado</td><td>Joven profesional / matrimonio joven</td><td>Profesional / oficina en casa</td></tr>
+        <tr><td class="sticky-col">Aptitud para Airbnb/vacacional</td><td><span class="no">Baja — zona no es corredor turístico</span></td><td><span class="no">Baja — zona no es corredor turístico</span></td></tr>
+        <tr><td class="sticky-col">Amenidades edificio</td><td>Gym, alberca, salón usos múltiples</td><td><span class="hl">Coworking, sala de juntas, seguridad 24h, lobby</span></td></tr>
+        <tr><td class="sticky-col">Administración</td><td>No especificada</td><td>ENACSA · 39 propietarios</td></tr>
+        <tr><td class="sticky-col">Abastecimiento de agua</td><td>No especificado</td><td><span class="no">Pozo (sin contrato JAPAY)</span></td></tr>
+        <tr><td class="sticky-col">Estado de entrega</td><td>Confirmar con desarrollador</td><td>Obra en avance — confirmar fecha</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="section-head reveal">
+    <h2>Análisis por objetivo del inversionista</h2>
+    <p>Lo que cambia según qué esté optimizando Marco</p>
+  </div>
+  <div class="reveal">
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('rend',this)">↑ Rendimiento (cap rate)</button>
+      <button class="tab-btn" onclick="switchTab('inq',this)">◈ Perfil de inquilino</button>
+      <button class="tab-btn" onclick="switchTab('riesgo',this)">⚠ Riesgo y pendientes</button>
+    </div>
+
+    <div class="tab-pane active" id="tab-rend">
+      <div class="analysis-grid">
+        <div class="a-box">
+          <h4>› Arvum — menor entrada relativa, menor gasto fijo</h4>
+          <ul>
+            <li class="pro"><strong>Mantenimiento 39% más bajo</strong> que MIRA ($42K vs $68.7K al año) — eso protege el flujo neto sin depender de rentas altas</li>
+            <li class="pro">Sin cuota anticipada documentada al recibir la unidad</li>
+            <li class="con">Precio/m² casi <strong>75% más alto</strong> que MIRA — se paga más por menos espacio</li>
+            <li class="con">El precio de trabajo ($3.75M) <strong>no está respaldado</strong> por la ficha oficial ($3.45M) — el cap rate real podría ser mejor si el precio real es el de la ficha</li>
+          </ul>
+        </div>
+        <div class="a-box">
+          <h4>— MIRA — más espacio, más gasto operativo</h4>
+          <ul>
+            <li class="pro"><strong>$450,000 MXN más barata</strong> de entrada y con 44 m² adicionales de construcción</li>
+            <li class="pro">Techo de renta más alto por tamaño y ubicación con comercios/oficinas en el mismo edificio</li>
+            <li class="con">Mantenimiento de <strong>$68,655/año</strong> se come buena parte de la ventaja de tamaño frente a Arvum</li>
+            <li class="con">Cuota anticipada de ~$17,164 MXN al recibir, más gasto que no tiene Arvum documentado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-inq">
+      <div class="analysis-grid">
+        <div class="a-box">
+          <h4>› Quién rentaría cada una</h4>
+          <ul>
+            <li><strong>Arvum:</strong> el propio desarrollador lo posiciona para "estudiantes y matrimonios jóvenes" — inquilino de rotación media, sensible a amenidades como alberca y gym</li>
+            <li><strong>MIRA:</strong> edificio de usos mixtos con coworking y oficinas en planta baja — perfil más afín a profesional o pequeño negocio que busca vivir cerca de su lugar de trabajo</li>
+            <li><strong>Ninguna de las dos es candidata fuerte a Airbnb</strong> — la ocupación vacacional de la zona norte (43–55%) es notablemente menor que Centro Histórico o Itzimná (60–70%+), y ninguno de los dos desarrollos se comercializa con ese enfoque</li>
+          </ul>
+        </div>
+        <div class="a-box">
+          <h4>— Velocidad de colocación esperada</h4>
+          <ul>
+            <li>Ambas zonas muestran oferta activa constante de 2 recámaras amuebladas en el rango $15K–$19.5K — mercado líquido, no hay escasez de comparables</li>
+            <li>Amenidades compartidas (alberca/gym en Arvum, coworking/seguridad en MIRA) ayudan a diferenciarse del inventario genérico de la zona y pueden acortar el tiempo de renta</li>
+            <li>Ninguna renta actualmente — ambas parten de cero, sin historial de ocupación propio que confirme la proyección</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-riesgo">
+      <div class="analysis-grid">
+        <div class="a-box">
+          <h4>› Antes de comprometer capital</h4>
+          <ul>
+            <li class="con"><strong>Confirmar por escrito</strong> el precio y número de cajones de Arvum — el premium de $300K sobre la ficha no tiene respaldo documental</li>
+            <li class="con"><strong>Confirmar por escrito</strong> el número real de cajones de MIRA — la ficha oficial dice 1, no 2</li>
+            <li class="con">Confirmar fecha de entrega de MIRA — las fotos de la ficha muestran obra en proceso, lo que implica meses sin renta antes de empezar a cobrar</li>
+            <li class="con">MIRA depende de abastecimiento por pozo — vale la pena preguntar sobre calidad y continuidad del suministro, algo que no aplica en un inmueble con contrato JAPAY</li>
+          </ul>
+        </div>
+        <div class="a-box">
+          <h4>— Contexto: las 2 propiedades que ya tiene Marco</h4>
+          <ul>
+            <li>No se cuenta todavía con el desempeño real de sus 2 propiedades actuales en Mérida — esa información calibraría si el 3.4%–4.8% de cap rate proyectado aquí es consistente con lo que él ya está obteniendo</li>
+            <li>Si sus propiedades actuales rinden por encima de este rango, vale la pena replantear si un tercer departamento en zona norte diversifica su portafolio o simplemente lo repite</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head reveal">
+    <h2>Veredictos finales</h2>
+    <p>Sin ambigüedad — y sin maquillar lo que falta por confirmar</p>
+  </div>
+  <div class="verdicts-grid">
+    <div class="v-card reveal">
+      <div class="v-icon">◆</div>
+      <div class="v-prop">Arvum · EB-FF0786</div>
+      <div class="v-title">Menor gasto operativo, pero precio sin respaldo documental</div>
+      <p class="v-text">Si el precio de $3,750,000 se confirma por escrito con 2 cajones incluidos, el cap rate ronda 3.7%–4.6% — sostenido principalmente por su mantenimiento bajo ($3,500/mes). Si el precio real resulta ser el de la ficha ($3,450,000 con 1 cajón), el rendimiento mejora. <strong>No cerrar sin cotización oficial actualizada.</strong></p>
+    </div>
+    <div class="v-card v-gold reveal">
+      <div class="v-icon">▲</div>
+      <div class="v-prop">MIRA · EB-TM7745</div>
+      <div class="v-title">Mejor precio de entrada, mantenimiento que exige atención</div>
+      <p class="v-text">Con 125 m² a $26,400/m², es la opción más eficiente en espacio por peso invertido. Su cap rate estimado (3.4%–4.8%) es similar al de Arvum solo porque el mantenimiento alto ($68,655/año) compensa la ventaja de tamaño. <strong>Confirmar cajones reales y fecha de entrega antes de comprometer capital.</strong></p>
+    </div>
+    <div class="v-card v-dark reveal">
+      <div class="v-icon">⊙</div>
+      <div class="v-prop">Conclusión para Marco Arellano</div>
+      <div class="v-title">Los cap rates están prácticamente empatados — la decisión no debe basarse en el rendimiento bruto</div>
+      <p class="v-text">Ninguna de las dos opciones destaca claramente por números: ambas rentan en rangos similares y ambas funcionan mejor como renta tradicional de largo plazo que como Airbnb, ya que la zona norte no es el corredor turístico fuerte de Mérida. La decisión real debería apoyarse en tres cosas: (1) confirmar por escrito los dos datos pendientes antes de negociar cualquier precio, (2) revisar el desempeño de sus 2 propiedades actuales para saber si este rango de 3.4%–4.8% mejora o repite lo que ya tiene, y (3) decidir si prefiere el gasto fijo más bajo y predecible de Arvum o el mayor espacio y precio de entrada más accesible de MIRA. Comprar por optimismo sobre la ficha, sin la confirmación por escrito, es el único error que este análisis busca evitar.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logoblancotres.png" alt="TRES65 Inmobiliaria"
+           onerror="this.outerHTML='<span style=\'font-family:Raleway,sans-serif;font-size:1.2rem;font-weight:800;color:#2aaa99\'>TRES65</span>'">
+      <p>Especialistas en propiedades de<br>Mérida, Yucatán.<br>www.tres65inmobiliaria.com</p>
+    </div>
+    <div class="footer-agent">
+      <div class="agent-name">Damara Traconis Corres</div>
+      <div class="agent-role">Agente Inmobiliario · TRES65 Inmobiliaria</div>
+      <div class="agent-contact">
+        +52 999 278 6153<br>
+        <a href="mailto:damara@tres65inmobiliaria.com">damara@tres65inmobiliaria.com</a>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-hr">
+  <div class="footer-bottom">
+    <span>© 2026 TRES65 Inmobiliaria® · Marca registrada · Todos los derechos reservados</span>
+    <span>Análisis confidencial · Cifras de renta estimadas con comparables de mercado · No incluye impuestos ni gastos notariales · NOM-247-SE-2022</span>
+  </div>
+</footer>
+
+<script>
+  function closeMobileOverlay() {
+    document.getElementById('mobile-overlay').style.display = 'none';
+    sessionStorage.setItem('mo_dismissed', '1');
+  }
+  function checkMobile() {
+    if (sessionStorage.getItem('mo_dismissed')) return;
+    document.getElementById('mobile-overlay').style.display = 'flex';
+  }
+  window.addEventListener('DOMContentLoaded', checkMobile);
+
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const io2 = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.score-fill').forEach(b => {
+          const w = b.style.width; b.style.width = '0';
+          setTimeout(() => { b.style.width = w; }, 300);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.p-card').forEach(c => io2.observe(c));
+</script>
+</body>
+</html>
