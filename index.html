@@ -4,11 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Análisis Comparativo de Inversión · TRES65 Inmobiliaria</title>
-<meta property="og:title" content="Análisis Comparativo de Inversión · TRES65 Inmobiliaria">
-<meta property="og:description" content="Departamentos zona norte · Comparativa de inversión Arvum vs MIRA">
-<meta property="og:image" content="https://tres65-inmobiliaria.github.io/analisis-deptos/logo_para_uso_digital_rgb.jpg">
-<meta property="og:url" content="https://tres65-inmobiliaria.github.io/analisis-deptos/">
-<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -48,7 +43,7 @@
     flex-wrap: wrap;
     gap: 16px;
   }
-  .header-logo img { height: 90px; width: auto; display: block; }
+  .header-logo img { height: 60px; width: auto; display: block; }
   .header-meta { text-align: right; }
   .header-meta h1 {
     font-family: 'Raleway', sans-serif;
@@ -117,23 +112,22 @@
   }
   .section-head p { font-size: 0.82rem; color: var(--gray); margin-top: 5px; font-weight: 400; }
 
-  /* PENDING / WARNING BOX */
   .warn-box {
-    background: #fdf3e7;
-    border-left: 3px solid #d98c2b;
+    background: #f0f8f4;
+    border-left: 3px solid var(--teal-bright);
     border-radius: 8px;
     padding: 14px 18px;
     margin-bottom: 20px;
   }
   .warn-box .warn-lbl {
     font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-    color: #a5651a; margin-bottom: 6px;
+    color: var(--teal-deep); margin-bottom: 6px;
   }
   .warn-box p { font-size: 0.78rem; color: var(--dark); line-height: 1.6; }
   .warn-box p + p { margin-top: 6px; }
 
-  .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; padding-bottom: 8px; }
-  @media(max-width:780px){ .cards-grid{ grid-template-columns:1fr; } }
+  .cards-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; padding-bottom: 8px; }
+  @media(max-width:960px){ .cards-grid{ grid-template-columns:1fr; } }
 
   .p-card {
     background: #fff; border-radius: var(--radius); box-shadow: var(--shadow);
@@ -143,13 +137,15 @@
   .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--teal-bright); }
 
   .p-badge {
-    position: absolute; top: 12px; right: 12px; font-size: 0.6rem; font-weight: 700;
-    letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; z-index: 2;
+    position: absolute; top: 12px; right: 12px; font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 9px; border-radius: 20px; z-index: 2;
+    max-width: 128px; text-align: center; white-space: normal; line-height: 1.3;
   }
   .badge-gold { background: var(--gold); color: #fff; }
   .badge-value { background: var(--teal-light); color: var(--teal-deep); }
+  .badge-top { background: var(--teal-deep); color: #fff; }
 
-  .p-card-head { padding: 22px 22px 14px; border-bottom: 1px solid var(--gray-light); }
+  .p-card-head { padding: 22px 130px 14px 22px; border-bottom: 1px solid var(--gray-light); }
   .p-card-id { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; color: var(--teal-bright); text-transform: uppercase; margin-bottom: 6px; }
   .p-card-name { font-family: 'Raleway', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.3; }
   .p-card-zone { font-size: 0.75rem; color: var(--gray); margin-top: 3px; }
@@ -158,35 +154,35 @@
     padding: 14px 22px; background: linear-gradient(to right, var(--teal-light), #fff);
     display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
   }
-  .p-price-real { font-family: 'Raleway', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--teal-deep); line-height: 1; }
-  .p-price-cur { font-size: 0.7rem; font-weight: 600; color: var(--teal-mid); }
-  .p-price-m2 { font-size: 0.68rem; color: var(--gray); margin-left: auto; font-weight: 500; white-space: nowrap; }
+  .p-price-real { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--teal-deep); line-height: 1; }
+  .p-price-cur { font-size: 0.68rem; font-weight: 600; color: var(--teal-mid); }
+  .p-price-m2 { font-size: 0.66rem; color: var(--gray); margin-left: auto; font-weight: 500; white-space: nowrap; }
 
   .p-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-light); }
   .p-stat { background: #fff; padding: 10px 14px; }
-  .p-stat-lbl { font-size: 0.6rem; font-weight: 700; color: var(--gray); letter-spacing: 0.8px; text-transform: uppercase; }
-  .p-stat-val { font-size: 0.88rem; font-weight: 600; color: var(--dark); margin-top: 1px; }
+  .p-stat-lbl { font-size: 0.58rem; font-weight: 700; color: var(--gray); letter-spacing: 0.7px; text-transform: uppercase; }
+  .p-stat-val { font-size: 0.82rem; font-weight: 600; color: var(--dark); margin-top: 1px; }
 
-  .p-desc { padding: 16px 22px 10px; font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
+  .p-desc { padding: 16px 22px 10px; font-size: 0.76rem; color: var(--gray); line-height: 1.6; }
 
   .p-tags { padding: 0 22px 16px; display: flex; flex-wrap: wrap; gap: 5px; }
-  .p-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--teal-light); color: var(--teal-deep); }
+  .p-tag { font-size: 0.62rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; background: var(--teal-light); color: var(--teal-deep); }
 
   .p-scores { padding: 14px 22px 18px; border-top: 1px solid var(--gray-light); }
-  .scores-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .scores-lbl { font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
   .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
-  .score-name { font-size: 0.68rem; color: var(--dark); width: 110px; flex-shrink: 0; }
+  .score-name { font-size: 0.66rem; color: var(--dark); width: 100px; flex-shrink: 0; }
   .score-bg { flex: 1; height: 5px; background: var(--gray-light); border-radius: 3px; overflow: hidden; }
   .score-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--teal-mid), var(--teal-bright)); transition: width 1.2s cubic-bezier(.4,0,.2,1); }
-  .score-num { font-size: 0.68rem; font-weight: 700; color: var(--teal-deep); width: 24px; text-align: right; }
+  .score-num { font-size: 0.66rem; font-weight: 700; color: var(--teal-deep); width: 24px; text-align: right; }
 
   .rent-box {
     margin: 0 22px 18px; padding: 12px 14px; background: var(--gold-light);
     border-left: 3px solid var(--gold); border-radius: 6px;
   }
-  .rent-box .rent-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
-  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); }
-  .rent-box .rent-note { font-size: 0.68rem; color: var(--gray); margin-top: 2px; }
+  .rent-box .rent-lbl { font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
+  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--dark); }
+  .rent-box .rent-note { font-size: 0.66rem; color: var(--gray); margin-top: 2px; }
 
   .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 8px; }
   @media(max-width:680px){ .charts-row{grid-template-columns:1fr;} }
@@ -195,8 +191,8 @@
   .bar-chart { display: flex; align-items: flex-end; gap: 16px; height: 140px; padding-bottom: 2px; }
   .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
   .bar { width: 100%; border-radius: 6px 6px 0 0; position: relative; animation: barUp .9s ease forwards; }
-  .bar-v { position: absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.62rem; font-weight:700; color:var(--teal-deep); white-space:nowrap; }
-  .bar-lbl { font-size:0.65rem; color:var(--gray); text-align:center; font-weight:500; line-height:1.3; }
+  .bar-v { position: absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.6rem; font-weight:700; color:var(--teal-deep); white-space:nowrap; }
+  .bar-lbl { font-size:0.63rem; color:var(--gray); text-align:center; font-weight:500; line-height:1.3; }
   @keyframes barUp { from{transform:scaleY(0);transform-origin:bottom} to{transform:scaleY(1);transform-origin:bottom} }
 
   .table-scroll-hint {
@@ -214,7 +210,7 @@
   .compare-table tbody tr:hover td.sticky-col { background: var(--off-white); }
   @media (max-width: 768px) {
     .compare-table th, .compare-table td { min-width: 150px; }
-    .sticky-col { min-width: 150px !important; }
+    .sticky-col { min-width: 170px !important; }
   }
 
   .table-wrap { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 8px; }
@@ -222,14 +218,14 @@
   .compare-table thead tr { background: var(--teal-deep); }
   .compare-table thead th {
     padding: 14px 18px; text-align: left; color: #fff; font-family: 'Raleway', sans-serif;
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.3px;
+    font-size: 0.76rem; font-weight: 700; letter-spacing: 0.3px;
   }
-  .compare-table thead th:first-child { color:rgba(255,255,255,0.55); font-size:0.65rem; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; }
+  .compare-table thead th:first-child { color:rgba(255,255,255,0.55); font-size:0.62rem; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; }
   .compare-table tbody tr { border-bottom:1px solid var(--gray-light); transition:background .15s; }
   .compare-table tbody tr:hover { background:var(--off-white); }
   .compare-table tbody tr:last-child { border-bottom:none; }
-  .compare-table tbody td { padding:11px 18px; font-size:0.8rem; color:var(--dark); }
-  .compare-table tbody td:first-child { font-weight:600; color:var(--gray); font-size:0.72rem; letter-spacing:0.3px; }
+  .compare-table tbody td { padding:11px 18px; font-size:0.78rem; color:var(--dark); }
+  .compare-table tbody td:first-child { font-weight:600; color:var(--gray); font-size:0.7rem; letter-spacing:0.3px; }
   .hl { background:var(--gold-light)!important; font-weight:700!important; color:var(--teal-deep)!important; border-radius:4px; padding:3px 7px; }
   .yes { color:var(--teal-bright); font-weight:700; }
   .no  { color:#c97070; }
@@ -240,8 +236,8 @@
     width: fit-content; margin-bottom: 20px; flex-wrap: wrap;
   }
   .tab-btn {
-    padding: 7px 18px; border: none; background: transparent; border-radius: 6px;
-    font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--gray);
+    padding: 7px 16px; border: none; background: transparent; border-radius: 6px;
+    font-family: 'Montserrat', sans-serif; font-size: 0.73rem; font-weight: 600; color: var(--gray);
     cursor: pointer; transition: all .2s; letter-spacing: 0.2px;
   }
   .tab-btn.active { background:#fff; color:var(--teal-deep); box-shadow:0 1px 6px rgba(0,0,0,.08); }
@@ -253,27 +249,27 @@
 
   .a-box { background:#fff; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
   .a-box h4 {
-    font-family:'Raleway',sans-serif; font-size:0.88rem; font-weight:700; color:var(--teal-deep);
+    font-family:'Raleway',sans-serif; font-size:0.86rem; font-weight:700; color:var(--teal-deep);
     margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid var(--teal-light);
   }
   .a-box ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
-  .a-box ul li { font-size:0.76rem; color:var(--gray); padding-left:16px; position:relative; line-height:1.5; }
+  .a-box ul li { font-size:0.75rem; color:var(--gray); padding-left:16px; position:relative; line-height:1.5; }
   .a-box ul li::before { content:'→'; position:absolute; left:0; color:var(--teal-bright); font-weight:700; }
   .a-box ul li.pro::before { content:''; color:#2aaa99; }
   .a-box ul li.con::before { content:''; color:#c97070; }
   .a-box ul li strong { color:var(--dark); }
 
-  .verdicts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-  @media(max-width:780px){ .verdicts-grid{grid-template-columns:1fr;} }
+  .verdicts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  @media(max-width:960px){ .verdicts-grid{grid-template-columns:1fr;} }
 
   .v-card { background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); border-top:3px solid var(--teal-bright); }
   .v-card.v-gold { border-top-color:var(--gold); }
   .v-card.v-dark { border-top-color:var(--teal-deep); grid-column: 1 / -1; }
   .v-icon { font-size:1.6rem; margin-bottom:10px; }
-  .v-prop { font-size:0.62rem; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:5px; }
+  .v-prop { font-size:0.6rem; font-weight:700; letter-spacing:1.1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:5px; }
   .v-card.v-gold .v-prop { color:var(--gold); }
-  .v-title { font-family:'Raleway',sans-serif; font-size:0.95rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
-  .v-text { font-size:0.76rem; color:var(--gray); line-height:1.6; }
+  .v-title { font-family:'Raleway',sans-serif; font-size:0.92rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+  .v-text { font-size:0.75rem; color:var(--gray); line-height:1.6; }
 
   .footer { background: var(--dark); margin-top: 44px; padding: 36px 48px 24px; }
   .footer-inner {
@@ -302,7 +298,7 @@
     flex-direction: column; align-items: center; justify-content: center; padding: 36px 28px; text-align: center;
   }
   #mobile-overlay .mo-logo { margin-bottom: 28px; }
-  #mobile-overlay .mo-logo img { height: 80px; width: auto; opacity: 0.98; }
+  #mobile-overlay .mo-logo img { height: 60px; width: auto; opacity: 0.98; }
   #mobile-overlay .mo-icon { font-size: 2.4rem; margin-bottom: 14px; }
   #mobile-overlay .mo-tag {
     font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
@@ -352,14 +348,14 @@
   <div class="header-meta">
     <h1>Análisis Comparativo de Inversión</h1>
     <span class="header-accent"></span>
-    <p class="tagline">Departamentos zona norte · Julio 2026 · Uso Confidencial</p>
+    <p class="tagline">Departamentos zona norte de Mérida · Julio 2026 · Uso Confidencial</p>
   </div>
 </header>
 
 <div class="market-banner">
   <div class="market-banner-inner">
     <div class="market-stat">
-      <div class="val">$15K–$19.5K</div>
+      <div class="val">$15K–$20K</div>
       <div class="lbl">MXN/mes renta tradicional 2 rec.</div>
     </div>
     <div class="market-divider"></div>
@@ -369,7 +365,7 @@
     </div>
     <div class="market-divider"></div>
     <div class="market-stat">
-      <div class="val">3.4–4.8%</div>
+      <div class="val">3.4–6.5%</div>
       <div class="lbl">Cap rate neto estimado</div>
     </div>
     <div class="market-divider"></div>
@@ -386,11 +382,17 @@
     <p>Marco Arellano · Inversionista con 2 propiedades activas en Mérida · Objetivo: adquirir un tercer activo para renta</p>
   </div>
 
+  <div class="warn-box reveal">
+    <div class="warn-lbl">ℹ Nota metodológica</div>
+    <p><strong>ETRO se vende amueblada; Arvum y MIRA no.</strong> Las rentas estimadas de las tres se investigaron con comparables activos de sus respectivas zonas, pero un departamento amueblado normalmente comanda una renta más alta que uno sin muebles — por lo que la comparación de renta/cap rate entre ETRO y las otras dos no es completamente equivalente. Vale la pena tenerlo presente al leer la tabla comparativa y los veredictos.</p>
+    <p>Los pendientes de precio, estacionamiento y esquema de pago que se marcaron en versiones anteriores de este análisis (Arvum y MIRA) ya fueron confirmados por la asesora y se reflejan como datos definitivos en todo el documento.</p>
+  </div>
+
   <div class="cards-grid">
 
     <!-- ARVUM -->
     <div class="p-card reveal">
-      <div class="p-badge badge-value">◈ Menor mantenimiento</div>
+      <div class="p-badge badge-value">◈ Escritura sept. 2026</div>
       <div class="p-card-head">
         <div class="p-card-id">EB-FF0786 · Modelo C</div>
         <div class="p-card-name">Arvum</div>
@@ -398,19 +400,18 @@
       </div>
       <div class="p-price-row">
         <span class="p-price-real">$3,750,000</span>
-        <span class="p-price-cur">MXN</span>
+        <span class="p-price-cur">MXN · 2 cajones</span>
         <span class="p-price-m2">$46.3K/m²</span>
       </div>
       <div class="p-stats">
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">2</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">81 m²</div></div>
-        <div class="p-stat"><div class="p-stat-lbl">Estacionamiento</div><div class="p-stat-val">2 cajones</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Estacionamiento</div><div class="p-stat-val">2 cajones ✓</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Mantenimiento</div><div class="p-stat-val">$3,500/mes</div></div>
-        <div class="p-stat"><div class="p-stat-lbl">Entrega</div><div class="p-stat-val">Confirmar con desarrollador</div></div>
-        <div class="p-stat"><div class="p-stat-lbl">Esquema de cierre</div><div class="p-stat-val">Promesa c/v · 20% enganche · 80% recurso propio · escritura sep. 2026</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Esquema de cierre</div><div class="p-stat-val">20% promesa · 80% recurso propio · escritura sept. 2026</div></div>
       </div>
-      <div class="p-desc">Complejo orientado por el propio desarrollador a <strong>"estudiantes y matrimonios jóvenes"</strong> — esto confirma perfil de renta tradicional de largo plazo, no vacacional. Domótica básica (luces y A/C vía smartphone). Amenidades compartidas (gym, alberca, salón de usos múltiples) elevan el atractivo de renta sin costo adicional de mantenimiento propio de la unidad.</div>
+      <div class="p-desc">Complejo orientado por el propio desarrollador a <strong>"estudiantes y matrimonios jóvenes"</strong> — confirma perfil de renta tradicional de largo plazo, no vacacional. Domótica básica (luces y A/C vía smartphone). Es la única de las tres opciones con espera real antes de empezar a rentar: al escriturar hasta septiembre, pierde aproximadamente 2 meses de renta potencial frente a MIRA y ETRO, que pueden operar de inmediato.</div>
       <div class="p-tags">
         <span class="p-tag">◉ Alberca</span>
         <span class="p-tag">◈ Gym</span>
@@ -421,19 +422,19 @@
       <div class="rent-box">
         <div class="rent-lbl">§ Renta tradicional estimada mensual</div>
         <div class="rent-val">$15,000 – $18,000 MXN</div>
-        <div class="rent-note">Basado en comparables activos de la zona · perfil de inquilino: joven profesional / matrimonio joven</div>
+        <div class="rent-note">Sin amueblar · perfil de inquilino: joven profesional / matrimonio joven</div>
       </div>
       <div class="p-scores">
         <div class="scores-lbl">Rendimiento financiero estimado</div>
         <div class="score-row"><span class="score-name">Cap rate neto</span><div class="score-bg"><div class="score-fill" style="width:46%"></div></div><span class="score-num">4.6</span></div>
-        <div class="score-row"><span class="score-name">Costo operativo</span><div class="score-bg"><div class="score-fill" style="width:88%"></div></div><span class="score-num">8.8</span></div>
-        <div class="score-row"><span class="score-name">Certeza de datos</span><div class="score-bg"><div class="score-fill" style="width:80%"></div></div><span class="score-num">8.0</span></div>
+        <div class="score-row"><span class="score-name">Costo operativo</span><div class="score-bg"><div class="score-fill" style="width:82%"></div></div><span class="score-num">8.2</span></div>
+        <div class="score-row"><span class="score-name">Certeza de datos</span><div class="score-bg"><div class="score-fill" style="width:85%"></div></div><span class="score-num">8.5</span></div>
       </div>
     </div>
 
     <!-- MIRA -->
     <div class="p-card reveal">
-      <div class="p-badge badge-gold">◆ Mejor entrada / más espacio</div>
+      <div class="p-badge badge-gold">◆ Mayor espacio construido</div>
       <div class="p-card-head">
         <div class="p-card-id">EB-TM7745 · Depto. Dúplex 306, 3er nivel</div>
         <div class="p-card-name">MIRA</div>
@@ -448,12 +449,11 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">2 + medio baño</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2 + 1 medio</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">125 m²</div></div>
-        <div class="p-stat"><div class="p-stat-lbl">Estacionamiento</div><div class="p-stat-val">2 cajones</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Estacionamiento</div><div class="p-stat-val">2 cajones ✓</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Mantenimiento</div><div class="p-stat-val">$5,721/mes ($45.77/m²)</div></div>
-        <div class="p-stat"><div class="p-stat-lbl">Entrega</div><div class="p-stat-val">Confirmar avance de obra</div></div>
-        <div class="p-stat"><div class="p-stat-lbl">Esquema de cierre</div><div class="p-stat-val">Lista para escriturar · vía promesa c/v</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Esquema de cierre</div><div class="p-stat-val">Lista para escriturar ya, con promesa de compraventa</div></div>
       </div>
-      <div class="p-desc">Proyecto de usos mixtos (lofts, oficinas y locales comerciales) con <strong>lobby con recepción, sala de juntas de uso común, seguridad 24h y 39 propietarios</strong> bajo administración de ENACSA. Abastecimiento por pozo, sin contrato JAPAY. Al recibir la unidad se cobran <strong>3 mensualidades de mantenimiento anticipadas (~$17,164 MXN)</strong> adicionales al cierre. Perfil de edificio orientado a inquilino profesional de contrato largo, no turístico.</div>
+      <div class="p-desc">Proyecto de usos mixtos (lofts, oficinas y locales comerciales) con <strong>lobby con recepción, sala de juntas de uso común, seguridad 24h y 39 propietarios</strong> bajo administración de ENACSA. Abastecimiento por pozo, sin contrato JAPAY. Al recibir la unidad se cobran <strong>3 mensualidades de mantenimiento anticipadas (~$17,164 MXN)</strong> adicionales al cierre. Puede escriturarse de inmediato, sin la espera de Arvum.</div>
       <div class="p-tags">
         <span class="p-tag">◈ Coworking / sala de juntas</span>
         <span class="p-tag">✦ Seguridad 24h</span>
@@ -464,13 +464,55 @@
       <div class="rent-box">
         <div class="rent-lbl">§ Renta tradicional estimada mensual</div>
         <div class="rent-val">$15,000 – $19,500 MXN</div>
-        <div class="rent-note">Mayor m² y ubicación comercial permiten techo más alto · perfil de inquilino: profesional / oficina en casa</div>
+        <div class="rent-note">Sin amueblar · perfil de inquilino: profesional / oficina en casa</div>
       </div>
       <div class="p-scores">
         <div class="scores-lbl">Rendimiento financiero estimado</div>
         <div class="score-row"><span class="score-name">Cap rate neto</span><div class="score-bg"><div class="score-fill" style="width:48%"></div></div><span class="score-num">4.8</span></div>
-        <div class="score-row"><span class="score-name">Costo operativo</span><div class="score-bg"><div class="score-fill" style="width:58%"></div></div><span class="score-num">5.8</span></div>
-        <div class="score-row"><span class="score-name">Certeza de datos</span><div class="score-bg"><div class="score-fill" style="width:80%"></div></div><span class="score-num">8.0</span></div>
+        <div class="score-row"><span class="score-name">Costo operativo</span><div class="score-bg"><div class="score-fill" style="width:55%"></div></div><span class="score-num">5.5</span></div>
+        <div class="score-row"><span class="score-name">Certeza de datos</span><div class="score-bg"><div class="score-fill" style="width:78%"></div></div><span class="score-num">7.8</span></div>
+      </div>
+    </div>
+
+    <!-- ETRO -->
+    <div class="p-card reveal">
+      <div class="p-badge badge-top">⬥ Mejor rendimiento estimado</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-VJ8184</div>
+        <div class="p-card-name">ETRO</div>
+        <div class="p-card-zone">Temozón Norte, Mérida</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$3,300,000</span>
+        <span class="p-price-cur">MXN · amueblado</span>
+        <span class="p-price-m2">$38.8K/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">85 m² + 12 m² jardín</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Estacionamiento</div><div class="p-stat-val">1 cajón + visitas</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Mantenimiento</div><div class="p-stat-val">$2,200/mes</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Esquema de cierre</div><div class="p-stat-val">20% promesa · después lista para escriturar de inmediato</div></div>
+      </div>
+      <div class="p-desc">Desarrollo de 15 departamentos en Temozón Norte, "a estrenar", inspirado en el ambiente social de clubes de tenis de los años 80. <strong>Es la única de las tres que se entrega amueblada</strong>, con el mantenimiento más bajo del grupo. Amenidades orientadas a estilo de vida (alberca, terraza tipo bar, poker bar) que la distinguen del inventario genérico de renta de la zona.</div>
+      <div class="p-tags">
+        <span class="p-tag">◉ Alberca</span>
+        <span class="p-tag">✦ Terraza tipo bar</span>
+        <span class="p-tag">◈ Poker bar / asoleadero</span>
+        <span class="p-tag">◦ Fraccionamiento privado</span>
+        <span class="p-tag">◈ Caseta de vigilancia</span>
+      </div>
+      <div class="rent-box">
+        <div class="rent-lbl">§ Renta estimada mensual (amueblado)</div>
+        <div class="rent-val">$16,500 – $20,000 MXN</div>
+        <div class="rent-note">Amueblado · zona Temozón Norte de mayor plusvalía y renta que las otras dos</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Rendimiento financiero estimado</div>
+        <div class="score-row"><span class="score-name">Cap rate neto</span><div class="score-bg"><div class="score-fill" style="width:65%"></div></div><span class="score-num">6.5</span></div>
+        <div class="score-row"><span class="score-name">Costo operativo</span><div class="score-bg"><div class="score-fill" style="width:95%"></div></div><span class="score-num">9.5</span></div>
+        <div class="score-row"><span class="score-name">Certeza de datos</span><div class="score-bg"><div class="score-fill" style="width:90%"></div></div><span class="score-num">9.0</span></div>
       </div>
     </div>
 
@@ -478,7 +520,7 @@
 
   <div class="section-head reveal">
     <h2>Comparativa de números clave</h2>
-    <p>Precio de entrada · costo de mantenimiento anual · cap rate neto estimado</p>
+    <p>Costo de mantenimiento anual · cap rate neto estimado</p>
   </div>
   <div class="charts-row reveal">
     <div class="chart-box">
@@ -496,28 +538,34 @@
           </div>
           <span class="bar-lbl">MIRA</span>
         </div>
+        <div class="bar-group">
+          <div class="bar" style="height:38%;background:linear-gradient(to top,#1e7a6e,#5cc4b8);position:relative;">
+            <span class="bar-v">$26,400</span>
+          </div>
+          <span class="bar-lbl">ETRO</span>
+        </div>
       </div>
     </div>
     <div class="chart-box">
-      <h4>Cap rate neto: año 1 vs régimen estable (rango %)</h4>
+      <h4>Cap rate neto estimado (tope de rango, %)</h4>
       <div class="bar-chart">
         <div class="bar-group">
-          <div class="bar" style="height:75%;background:linear-gradient(to top,#7fa9a5,#b8dcd6);position:relative;">
-            <span class="bar-v">3.1% – 3.9%</span>
+          <div class="bar" style="height:71%;background:linear-gradient(to top,#1a5c5a,#2aaa99);position:relative;">
+            <span class="bar-v">3.7–4.6%</span>
           </div>
-          <span class="bar-lbl">Arvum · Año 1<br>(con retraso escritura)</span>
+          <span class="bar-lbl">Arvum</span>
         </div>
         <div class="bar-group">
-          <div class="bar" style="height:88%;background:linear-gradient(to top,#1a5c5a,#2aaa99);position:relative;">
-            <span class="bar-v">3.7% – 4.6%</span>
+          <div class="bar" style="height:74%;background:linear-gradient(to top,#c9a84c,#f0d080);position:relative;">
+            <span class="bar-v">3.4–4.8%</span>
           </div>
-          <span class="bar-lbl">Arvum · Estable</span>
+          <span class="bar-lbl">MIRA</span>
         </div>
         <div class="bar-group">
-          <div class="bar" style="height:92%;background:linear-gradient(to top,#c9a84c,#f0d080);position:relative;">
-            <span class="bar-v">3.4% – 4.8%</span>
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1e7a6e,#5cc4b8);position:relative;">
+            <span class="bar-v">5.2–6.5%</span>
           </div>
-          <span class="bar-lbl">MIRA · Año 1 = Estable<br>(sin retraso)</span>
+          <span class="bar-lbl">ETRO*</span>
         </div>
       </div>
     </div>
@@ -529,7 +577,7 @@
   </div>
 
   <div class="table-scroll-hint" id="tableHint">
-    <span>‹ desliza para ver ambas propiedades ›</span>
+    <span>‹ desliza para ver las tres propiedades ›</span>
   </div>
 
   <div class="table-wrap reveal">
@@ -540,32 +588,35 @@
           <th class="sticky-col">Criterio</th>
           <th>Arvum</th>
           <th>MIRA</th>
+          <th>ETRO</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="sticky-col">Precio</td><td>$3,750,000 MXN</td><td>$3,300,000 MXN</td></tr>
-        <tr><td class="sticky-col">Precio/m² construido</td><td>$46,300 MXN</td><td><span class="hl">$26,400 MXN</span></td></tr>
-        <tr><td class="sticky-col">Construcción</td><td>81 m²</td><td><span class="hl">125 m²</span></td></tr>
-        <tr><td class="sticky-col">Recámaras / baños</td><td>2 / 2</td><td>2 / 2 + medio</td></tr>
-        <tr><td class="sticky-col">Estacionamiento</td><td>2 cajones (confirmado por asesora)</td><td>2 cajones (confirmado por asesora)</td></tr>
-        <tr><td class="sticky-col">Mantenimiento mensual</td><td><span class="hl">$3,500 MXN</span></td><td>$5,721 MXN</td></tr>
-        <tr><td class="sticky-col">Mantenimiento anual</td><td><span class="hl">$42,000 MXN</span></td><td>$68,655 MXN</td></tr>
-        <tr><td class="sticky-col">Cuota anticipada al recibir</td><td>No especificada</td><td><span class="no">~$17,164 MXN (3 meses)</span></td></tr>
-        <tr><td class="sticky-col">Renta tradicional estimada</td><td>$15,000–$18,000/mes</td><td>$15,000–$19,500/mes</td></tr>
-        <tr><td class="sticky-col">Esquema de cierre</td><td>Promesa c/v · 20% enganche · 80% recurso propio · escritura sep. 2026</td><td><span class="hl">Lista para escriturar · promesa c/v</span></td></tr>
-        <tr><td class="sticky-col">Tiempo estimado a primera renta (desde hoy, 30-jul-2026)</td><td><span class="pend">~2 meses sin flujo (espera escritura sep. 2026)</span></td><td><span class="hl">Inmediato — puede empezar a rentar ya</span></td></tr>
-        <tr><td class="sticky-col">Cap rate neto — régimen estable</td><td>3.7%–4.6%</td><td>3.4%–4.8%</td></tr>
-        <tr><td class="sticky-col">Cap rate efectivo — año 1</td><td><span class="pend">3.1%–3.9% (penalizado por retraso)</span></td><td><span class="hl">3.4%–4.8% (sin cambio)</span></td></tr>
-        <tr><td class="sticky-col">Perfil de inquilino esperado</td><td>Joven profesional / matrimonio joven</td><td>Profesional / oficina en casa</td></tr>
-        <tr><td class="sticky-col">Aptitud para Airbnb/vacacional</td><td><span class="no">Baja — zona no es corredor turístico</span></td><td><span class="no">Baja — zona no es corredor turístico</span></td></tr>
-        <tr><td class="sticky-col">Amenidades edificio</td><td>Gym, alberca, salón usos múltiples</td><td><span class="hl">Coworking, sala de juntas, seguridad 24h, lobby</span></td></tr>
-        <tr><td class="sticky-col">Administración</td><td>No especificada</td><td>ENACSA · 39 propietarios</td></tr>
-        <tr><td class="sticky-col">Abastecimiento de agua</td><td>No especificado</td><td><span class="no">Pozo (sin contrato JAPAY)</span></td></tr>
-        <tr><td class="sticky-col">Estado de entrega</td><td>Confirmar con desarrollador</td><td>Obra en avance — confirmar fecha</td></tr>
+        <tr><td class="sticky-col">Zona</td><td>Benito Juárez Nte / San Ramón</td><td>Colonia México / México Norte</td><td>Temozón Norte</td></tr>
+        <tr><td class="sticky-col">Precio</td><td>$3,750,000 MXN</td><td>$3,300,000 MXN</td><td>$3,300,000 MXN</td></tr>
+        <tr><td class="sticky-col">Precio/m² construido</td><td>$46,300 MXN</td><td><span class="hl">$26,400 MXN</span></td><td>$38,800 MXN</td></tr>
+        <tr><td class="sticky-col">Construcción</td><td>81 m²</td><td><span class="hl">125 m²</span></td><td>85 m² + 12 m² jardín</td></tr>
+        <tr><td class="sticky-col">Recámaras / baños</td><td>2 / 2</td><td>2 / 2 + medio</td><td>2 / 2</td></tr>
+        <tr><td class="sticky-col">Estacionamiento</td><td>2 cajones</td><td>2 cajones</td><td>1 cajón + visitas</td></tr>
+        <tr><td class="sticky-col">Amueblado</td><td><span class="no">No</span></td><td><span class="no">No</span></td><td><span class="yes">✓ Sí</span></td></tr>
+        <tr><td class="sticky-col">Mantenimiento mensual</td><td>$3,500 MXN</td><td>$5,721 MXN</td><td><span class="hl">$2,200 MXN</span></td></tr>
+        <tr><td class="sticky-col">Mantenimiento anual</td><td>$42,000 MXN</td><td>$68,655 MXN</td><td><span class="hl">$26,400 MXN</span></td></tr>
+        <tr><td class="sticky-col">Cuota anticipada al recibir</td><td>No especificada</td><td><span class="no">~$17,164 MXN (3 meses)</span></td><td>No especificada</td></tr>
+        <tr><td class="sticky-col">Esquema de cierre</td><td>20% promesa · escritura sept. 2026 (espera ~2 meses)</td><td>Lista para escriturar ya, con promesa</td><td>20% promesa · escritura inmediata después</td></tr>
+        <tr><td class="sticky-col">Renta tradicional estimada</td><td>$15,000–$18,000/mes</td><td>$15,000–$19,500/mes</td><td>$16,500–$20,000/mes (amueblado)</td></tr>
+        <tr><td class="sticky-col">Cap rate neto estimado (régimen)</td><td>3.7%–4.6%</td><td>3.4%–4.8%</td><td><span class="hl">5.2%–6.5%</span></td></tr>
+        <tr><td class="sticky-col">Cap rate efectivo año 1</td><td><span class="no">~3.1%–3.8% (pierde ~2 meses de renta)</span></td><td>3.4%–4.8% (sin ajuste)</td><td><span class="hl">5.2%–6.5% (sin ajuste)</span></td></tr>
+        <tr><td class="sticky-col">Perfil de inquilino esperado</td><td>Joven profesional / matrimonio joven</td><td>Profesional / oficina en casa</td><td>Profesional / familia joven, estilo de vida</td></tr>
+        <tr><td class="sticky-col">Aptitud para Airbnb/vacacional</td><td><span class="no">Baja — zona no es corredor turístico</span></td><td><span class="no">Baja — zona no es corredor turístico</span></td><td><span class="no">Baja — zona no es corredor turístico</span></td></tr>
+        <tr><td class="sticky-col">Amenidades edificio</td><td>Gym, alberca, salón usos múltiples</td><td>Coworking, sala de juntas, seguridad 24h, lobby</td><td>Alberca, terraza bar, poker bar, asoleadero</td></tr>
+        <tr><td class="sticky-col">Administración</td><td>No especificada</td><td>ENACSA · 39 propietarios</td><td>No especificada</td></tr>
+        <tr><td class="sticky-col">Abastecimiento de agua</td><td>No especificado</td><td><span class="no">Pozo (sin contrato JAPAY)</span></td><td>No especificado</td></tr>
+        <tr><td class="sticky-col">Estado de entrega</td><td>Promesa 20% · escritura sept. 2026</td><td>Lista para escriturar · confirmar fecha exacta de obra</td><td>A estrenar · lista tras promesa</td></tr>
       </tbody>
     </table>
     </div>
   </div>
+  <p style="font-size:0.68rem;color:var(--gray);margin-top:8px;">* ETRO se compara con salvedad metodológica: viene amueblada, a diferencia de Arvum y MIRA — su renta y cap rate no son 100% equivalentes a los de las otras dos.</p>
 
   <div class="section-head reveal">
     <h2>Análisis por objetivo del inversionista</h2>
@@ -581,22 +632,19 @@
     <div class="tab-pane active" id="tab-rend">
       <div class="analysis-grid">
         <div class="a-box">
-          <h4>› Arvum — menor entrada relativa, menor gasto fijo</h4>
+          <h4>› ETRO — el rendimiento más alto, con una salvedad</h4>
           <ul>
-            <li class="pro"><strong>Mantenimiento 39% más bajo</strong> que MIRA ($42K vs $68.7K al año) — eso protege el flujo neto sin depender de rentas altas</li>
-            <li class="pro">Sin cuota anticipada documentada al recibir la unidad</li>
-            <li class="con">Precio/m² casi <strong>75% más alto</strong> que MIRA — se paga más por menos espacio</li>
-            <li class="con">Escritura programada hasta <strong>septiembre 2026</strong> — desde hoy (30-jul-2026) son <strong>~2 meses sin generar renta</strong> mientras el 20% de enganche ya está comprometido. Eso baja el cap rate efectivo del año 1 a <strong>3.1%–3.9%</strong>, frente al 3.7%–4.6% en régimen estable</li>
+            <li class="pro"><strong>Cap rate estimado 5.2%–6.5%</strong>, notablemente por encima de Arvum y MIRA, sostenido por el mantenimiento más bajo del grupo ($2,200/mes) y una zona con rentas más altas</li>
+            <li class="pro">Escritura inmediata después de la promesa — no pierde meses de renta como Arvum</li>
+            <li class="con">Viene amueblada — su renta estimada no es directamente comparable con Arvum/MIRA, que se rentarían sin muebles. Parte de esa ventaja de cap rate podría explicarse por esa diferencia, no solo por la zona</li>
           </ul>
         </div>
         <div class="a-box">
-          <h4>— MIRA — más espacio, más gasto operativo</h4>
+          <h4>— Arvum y MIRA — cap rates similares, pero Arvum pierde tiempo</h4>
           <ul>
-            <li class="pro"><strong>$450,000 MXN más barata</strong> de entrada y con 44 m² adicionales de construcción</li>
-            <li class="pro">Techo de renta más alto por tamaño y ubicación con comercios/oficinas en el mismo edificio</li>
-            <li class="pro">Está <strong>lista para escriturar de inmediato</strong> — sin el hueco de ~2 meses que tiene Arvum, su cap rate del año 1 (3.4%–4.8%) es igual al de régimen estable</li>
-            <li class="con">Mantenimiento de <strong>$68,655/año</strong> se come buena parte de la ventaja de tamaño frente a Arvum</li>
-            <li class="con">Cuota anticipada de ~$17,164 MXN al recibir, más gasto que no tiene Arvum documentado</li>
+            <li>En régimen estable, Arvum (3.7%–4.6%) y MIRA (3.4%–4.8%) quedan prácticamente empatados</li>
+            <li class="con">Arvum es la única con espera real hasta septiembre 2026 — su <strong>cap rate efectivo del primer año baja a ~3.1%–3.8%</strong> al perder ~2 meses de renta con el capital ya comprometido</li>
+            <li class="con">MIRA compensa su mantenimiento alto ($68,655/año) con mayor superficie y precio de entrada más bajo, pero no alcanza el rendimiento de ETRO ni siquiera en el escenario optimista</li>
           </ul>
         </div>
       </div>
@@ -609,15 +657,16 @@
           <ul>
             <li><strong>Arvum:</strong> el propio desarrollador lo posiciona para "estudiantes y matrimonios jóvenes" — inquilino de rotación media, sensible a amenidades como alberca y gym</li>
             <li><strong>MIRA:</strong> edificio de usos mixtos con coworking y oficinas en planta baja — perfil más afín a profesional o pequeño negocio que busca vivir cerca de su lugar de trabajo</li>
-            <li><strong>Ninguna de las dos es candidata fuerte a Airbnb</strong> — la ocupación vacacional de la zona norte (43–55%) es notablemente menor que Centro Histórico o Itzimná (60–70%+), y ninguno de los dos desarrollos se comercializa con ese enfoque</li>
+            <li><strong>ETRO:</strong> amenidades de estilo de vida (poker bar, terraza tipo bar) y zona de crecimiento con buena plusvalía — perfil de profesional joven o familia que busca algo más lifestyle, y al venir amueblada facilita rentas de mediano plazo o relocaciones</li>
+            <li><strong>Ninguna de las tres es candidata fuerte a Airbnb</strong> — la ocupación vacacional de la zona norte (43–55%) es notablemente menor que Centro Histórico o Itzimná (60–70%+)</li>
           </ul>
         </div>
         <div class="a-box">
           <h4>— Velocidad de colocación esperada</h4>
           <ul>
-            <li>Ambas zonas muestran oferta activa constante de 2 recámaras amuebladas en el rango $15K–$19.5K — mercado líquido, no hay escasez de comparables</li>
-            <li>Amenidades compartidas (alberca/gym en Arvum, coworking/seguridad en MIRA) ayudan a diferenciarse del inventario genérico de la zona y pueden acortar el tiempo de renta</li>
-            <li>Ninguna renta actualmente — ambas parten de cero, sin historial de ocupación propio que confirme la proyección</li>
+            <li>Las tres zonas muestran oferta activa constante de 2 recámaras en rangos similares — mercado líquido, no hay escasez de comparables</li>
+            <li>ETRO amueblada puede colocarse más rápido con inquilinos que buscan mudarse sin comprar muebles (relocaciones, profesionales temporales)</li>
+            <li>Ninguna de las tres renta actualmente — todas parten de cero, sin historial de ocupación propio que confirme la proyección</li>
           </ul>
         </div>
       </div>
@@ -628,15 +677,16 @@
         <div class="a-box">
           <h4>› Antes de comprometer capital</h4>
           <ul>
-            <li class="con">Confirmar fecha de entrega de MIRA — las fotos de la ficha muestran obra en proceso, lo que implica meses sin renta antes de empezar a cobrar</li>
-            <li class="con">Arvum compromete el 20% de enganche desde ahora pero no genera renta hasta escriturar en septiembre — son <strong>~2 meses de capital comprometido sin flujo</strong> que deben presupuestarse como costo de oportunidad. El 80% restante se cubre con recurso propio, pagadero al escriturar en septiembre 2026 — asegurar que ese capital esté disponible y líquido para esa fecha</li>
+            <li class="con">Confirmar fecha exacta de entrega de MIRA — las fotos de la ficha muestran obra en proceso, lo que implica meses sin renta antes de empezar a cobrar si no está lista</li>
             <li class="con">MIRA depende de abastecimiento por pozo — vale la pena preguntar sobre calidad y continuidad del suministro, algo que no aplica en un inmueble con contrato JAPAY</li>
+            <li class="con">Para ETRO, validar con el desarrollador el estado real de "a estrenar" y la fecha en que quedaría lista para rentar tras la escritura</li>
+            <li>El resto de los pendientes de datos (precio y estacionamiento de Arvum, estacionamiento de MIRA) ya fueron confirmados por la asesora y no requieren más seguimiento</li>
           </ul>
         </div>
         <div class="a-box">
           <h4>— Contexto: las 2 propiedades que ya tiene Marco</h4>
           <ul>
-            <li>No se cuenta todavía con el desempeño real de sus 2 propiedades actuales en Mérida — esa información calibraría si el 3.4%–4.8% de cap rate proyectado aquí es consistente con lo que él ya está obteniendo</li>
+            <li>No se cuenta todavía con el desempeño real de sus 2 propiedades actuales en Mérida — esa información calibraría si el rango de 3.4%–6.5% de cap rate proyectado aquí mejora o simplemente iguala lo que ya está obteniendo</li>
             <li>Si sus propiedades actuales rinden por encima de este rango, vale la pena replantear si un tercer departamento en zona norte diversifica su portafolio o simplemente lo repite</li>
           </ul>
         </div>
@@ -646,26 +696,32 @@
 
   <div class="section-head reveal">
     <h2>Veredictos finales</h2>
-    <p>Sin ambigüedad — y sin maquillar lo que falta por confirmar</p>
+    <p>Sin ambigüedad — y sin maquillar lo que sigue sin ser 100% comparable</p>
   </div>
   <div class="verdicts-grid">
     <div class="v-card reveal">
       <div class="v-icon">◆</div>
       <div class="v-prop">Arvum · EB-FF0786</div>
-      <div class="v-title">Menor gasto operativo, precio ya confirmado, pero arranque más lento</div>
-      <p class="v-text">Con el precio confirmado por la asesora en $3,750,000 (2 cajones incluidos), el cap rate en régimen estable ronda 3.7%–4.6% — sostenido principalmente por su mantenimiento bajo ($3,500/mes). El 80% restante del enganche se cubre con recurso propio, pagadero al escriturar en septiembre 2026. Pero la escritura está programada hasta esa fecha: desde hoy son ~2 meses de enganche comprometido sin renta, lo que baja el cap rate real del año 1 a 3.1%–3.9%. <strong>El punto de atención ya no es el precio, sino el flujo: asegurar que el 80% restante esté disponible y líquido para septiembre.</strong></p>
+      <div class="v-title">Datos confirmados, pero es la única con tiempo muerto real</div>
+      <p class="v-text">Precio, cajones y esquema de pago ya están confirmados — sin pendientes. Aun así, es la única de las tres opciones con espera real hasta septiembre 2026 para escriturar, lo que baja su cap rate efectivo del primer año a ~3.1%–3.8%, el más bajo de las tres opciones en ese periodo inicial.</p>
     </div>
     <div class="v-card v-gold reveal">
       <div class="v-icon">▲</div>
       <div class="v-prop">MIRA · EB-TM7745</div>
-      <div class="v-title">Mejor precio de entrada y arranque inmediato de renta</div>
-      <p class="v-text">Con 125 m² a $26,400/m², es la opción más eficiente en espacio por peso invertido. Su cap rate estable (3.4%–4.8%) ya era similar al de Arvum antes de considerar tiempos de cierre — y al estar lista para escriturar de inmediato, ese rendimiento se mantiene igual desde el año 1, sin el hueco de ~2 meses que sí tiene Arvum. Eso la convierte en la opción con mejor rendimiento real de corto plazo, no solo de papel. <strong>Confirmar fecha de entrega antes de comprometer capital.</strong></p>
+      <div class="v-title">Más espacio por peso invertido, mantenimiento que pesa</div>
+      <p class="v-text">Con 125 m² a $26,400/m², es la opción más eficiente en espacio. Puede escriturar de inmediato, sin tiempo muerto. Su mantenimiento de $68,655/año es el más alto del grupo y evita que alcance el rendimiento de ETRO pese a su buen precio de entrada.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon">⬥</div>
+      <div class="v-prop">ETRO · EB-VJ8184</div>
+      <div class="v-title">El rendimiento más alto en papel — con una comparación no del todo pareja</div>
+      <p class="v-text">Cap rate estimado de 5.2%–6.5%, mantenimiento más bajo del grupo y escritura inmediata tras la promesa. Pero viene amueblada, y esa diferencia infla parcialmente su ventaja de renta frente a Arvum y MIRA — no es un defecto del inmueble, es una advertencia sobre cómo leer la comparación.</p>
     </div>
     <div class="v-card v-dark reveal">
       <div class="v-icon">⊙</div>
       <div class="v-prop">Conclusión para Marco Arellano</div>
-      <div class="v-title">En régimen estable los cap rates están casi empatados — pero en el año 1, la velocidad de MIRA para escriturar inclina la balanza a su favor</div>
-      <p class="v-text">Con las cifras a régimen estable, ninguna de las dos opciones destaca claramente: ambas rentan en rangos similares y ambas funcionan mejor como renta tradicional de largo plazo que como Airbnb, ya que la zona norte no es el corredor turístico fuerte de Mérida. Pero el esquema de cierre cambia el panorama del primer año: Arvum no puede empezar a rentar hasta escriturar en septiembre 2026 (~2 meses de capital comprometido sin flujo), mientras MIRA puede escriturar ya y arrancar a rentar de inmediato — su cap rate efectivo de año 1 (3.4%–4.8%) queda claramente por encima del de Arvum (3.1%–3.9%). Con precio y cajones de ambas propiedades ya confirmados, la decisión real debería apoyarse en tres cosas: (1) revisar el desempeño de sus 2 propiedades actuales para saber si el rango de 3.4%–4.8% mejora o repite lo que ya tiene, (2) decidir si prefiere el gasto fijo más bajo y predecible de Arvum a cambio de arrancar más tarde, o el arranque inmediato y mayor espacio de MIRA, y (3) si la velocidad de retorno del primer año pesa en la decisión, MIRA parte con ventaja real, no solo teórica, mientras Arvum debe asegurar que el 80% restante esté disponible y líquido para septiembre. Lo único que sigue abierto es la fecha exacta de entrega de MIRA, que conviene confirmar antes de cerrar.</p>
+      <div class="v-title">ETRO rompe el empate en papel; la decisión final necesita dos datos que aún no tenemos</div>
+      <p class="v-text">Con los tres pendientes de documentación ya resueltos, la comparación queda más limpia: ETRO muestra el mejor cap rate estimado (5.2%–6.5%) y el mantenimiento más bajo, pero esa ventaja está parcialmente inflada por venir amueblada — algo que Arvum y MIRA no tienen. Arvum, aunque con todos sus datos confirmados, es la única con tiempo muerto real antes de generar renta, lo que la deja en la posición más débil de las tres en el primer año. MIRA ofrece el mejor precio por metro cuadrado pero su mantenimiento alto la mantiene por debajo de ETRO en rendimiento. Antes de que Marco comprometa capital, recomendamos: (1) confirmar la fecha de entrega real de MIRA, (2) revisar el desempeño de sus 2 propiedades actuales para calibrar si este rango de rendimiento representa una mejora real, y (3) decidir si el atractivo adicional de ETRO (amueblada, lista para rentar más rápido) justifica sacrificar algo de la certeza operativa que ya tienen Arvum y MIRA.</p>
     </div>
   </div>
 
